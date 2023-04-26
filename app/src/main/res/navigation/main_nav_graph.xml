@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/Forecast_search">
+
+    <fragment
+        android:id="@+id/Forecast_search"
+        android:name="com.example.roomyweather.ui.Forecast_search_fragment"
+        android:label="Forecast_search">
+        <action
+            android:id="@+id/navigate_to_forecast_detail"
+            app:destination="@id/Forecast_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Forecast_detail"
+        android:name="com.example.roomyweather.ui.ForecastDetailFragment"
+        android:label="forecastdatail">
+        <argument
+            android:name="forecastCity"
+            app:argType="com.example.roomyweather.data.ForecastCity" />
+        <argument
+            android:name="forecastPeriod"
+            app:argType="com.example.roomyweather.data.ForecastPeriod" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.roomyweather.ui.SettingsFragment"
+        android:label="settings" />
+
+</navigation>
